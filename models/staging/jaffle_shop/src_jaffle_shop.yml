@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: This is a replica of the Postgres database used by our app
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: raw customers table
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+            
+      - name: orders
+        description: raw order table
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          
